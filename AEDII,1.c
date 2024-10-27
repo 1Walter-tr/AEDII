@@ -2,9 +2,10 @@
 producto: codProducto, descripción, precio unitario. Luego, declarar un puntero a una variable de ese tipo,
 y crear el primer nodo de la lista a partir del ingreso de datos por teclado. Por último, mostrar los datos
 del primer nodo almacenado.*/
+
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct Nodo{
   int codigoProducto;
@@ -13,7 +14,7 @@ typedef struct Nodo{
   struct Nodo *siguiente;
 }tListaProductos;
 
-tListaProductos *crearNodo(int codigoProductoT,char descripcionProductoT[],float precioProductoT){
+tListaProductos *crearNodo(int codigoProductoT,char descripcionProductoT[], float precioProductoT){
   tListaProductos *nuevoNodo = (tListaProductos*)malloc(sizeof(tListaProductos));
   nuevoNodo->codigoProducto=codigoProductoT;
   strcpy(nuevoNodo->descripcionProducto,descripcionProductoT);
@@ -44,12 +45,12 @@ void ingresoDatos(tListaProductos **cabeza){
   scanf("%d",&codigoProducto);
   printf("Ingrese la descripcion del producto: ");
   scanf("%s",descripcionProducto);
-  printf("Ingrese el precio unitario del producto: ");
+  printf("Ingrese el precio del producto: ");
   scanf("%f",&precioProducto);
 
   tListaProductos *nuevoNodo = crearNodo(codigoProducto,descripcionProducto,precioProducto);
-  nuevoNodo->siguiente = *cabeza;
-  *cabeza = nuevoNodo;
+  nuevoNodo->siguiente=*cabeza;
+  *cabeza=nuevoNodo;
 }
 
 void salidaDatos(tListaProductos *cabeza){
@@ -61,4 +62,5 @@ void salidaDatos(tListaProductos *cabeza){
     printf("Precio del producto: %.2f\n",actual->precioProducto);
     actual=actual->siguiente;
   }
+  
 }
