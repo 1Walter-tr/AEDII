@@ -19,6 +19,7 @@ typedef struct Nodo{
     struct Nodo *siguiente;
 }tListaAED;
 
+int conteoAlumnos(tListaAED *cabeza);
 tListaAED *crearNodo(int nroLibretaT,char nombreAlumnoT[]);
 void ingresoDatos(tListaAED **cabeza);
 void salidaDatos(tListaAED *cabeza);
@@ -71,6 +72,17 @@ int main(){
     }while(opcion != 6);
 
     return 0;
+}
+
+int conteoAlumnos(tListaAED *cabeza){
+    int conteo = 0;
+    tListaAED *actual = cabeza;
+    while(actual != NULL){
+        conteo++;
+        actual = actual->siguiente;
+    }
+
+    return conteo;
 }
 
 tListaAED *crearNodo(int nroLibretaT, char nombreAlumnoT[]){
