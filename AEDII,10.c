@@ -1,3 +1,7 @@
+/*Diagramar el árbol de búsqueda binaria que corresponde en cada caso, si sus elementos son insertados
+de la siguiente manera:
+a) 54 -72 -25 -10 -15 -5
+b) 74 -22 125 -10 -150 35*/
 #include <stdio.h>
 #include <stdlib.h>
 
