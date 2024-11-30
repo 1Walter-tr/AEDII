@@ -1,3 +1,8 @@
+/*5. Escribir un programa que permita construir un árbol binario de búsqueda correspondiente a una lista de
+números enteros. Se debe considerar el nodo raíz del árbol, el primer elemento que se inserta en la lista.
+Los siguientes nodos serán descendientes derechos si son mayores, y descendientes izquierdos si son
+menores (tener en cuenta el orden de la lista dada). Además, programar funciones para el recorrido en
+pre-orden, in-orden y post-orden*/
 #include <stdio.h>
 #include <stdlib.h>
 
